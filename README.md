@@ -32,5 +32,5 @@ A simple, user-friendly cab booking application to allow users to book rides, ma
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/yourusername/cab-booking.git
+   git clone 
    cd cab-booking

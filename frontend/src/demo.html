@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideEase - Premium Cab Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .floating-animation {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-effect {
+            overflow: hidden;
+            border-right: 3px solid #667eea;
+            animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #667eea; }
+        }
+
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+        }
+
+        .morphing-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-car text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-white">RideEase</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-purple-300 transition">Home</a>
+                    <a href="#services" class="text-white hover:text-purple-300 transition">Services</a>
+                    <a href="#about" class="text-white hover:text-purple-300 transition">About</a>
+                    <a href="#contact" class="text-white hover:text-purple-300 transition">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://placehold.co/1920x1080" alt="Modern city skyline at night with illuminated skyscrapers and busy traffic light trails creating dynamic streaks across urban streets" class="w-full h-full object-cover opacity-20" />
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-white slide-in">
+                    <h1 class="text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                        <span class="typing-effect inline-block">Premium</span><br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-400">
+                            Ride Experience
+                        </span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-200 max-w-md">
+                        Experience luxury transportation with our premium fleet. Safe, reliable, and always on time.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-full hover:from-yellow-300 hover:to-orange-400 transition transform hover:scale-105 neon-glow">
+                            Book Now
+                        </button>
+                        <button class="px-8 py-4 glass-effect text-white font-semibold rounded-full hover:bg-white hover:bg-opacity-20 transition">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Booking Form -->
+                <div class="floating-animation">
+                    <div class="glass-effect rounded-3xl p-8 backdrop-blur-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="pulse-dot w-4 h-4 bg-green-400 rounded-full mr-3"></div>
+                            <h2 class="text-2xl font-bold text-white">Quick Booking</h2>
+                        </div>
+                        
+                        <form class="space-y-6" id="bookingForm">
+                            <div class="relative">
+                                <i class="fas fa-map-marker-alt absolute left-4 top-4 text-purple-300"></i>
+                                <input type="text" placeholder="Pickup Location" class="w-full pl-12 pr-4 py-4 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                            </div>
+                            
+                            <div class="relative">
+                                <i class="fas fa-map-marker-alt absolute left-4 top-4 text-pink-300"></i>
+                                <input type="text" placeholder="Drop Location" class="w-full pl-12 pr-4 py-4 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="relative">
+                                    <i class="fas fa-calendar absolute left-4 top-4 text-blue-300"></i>
+                                    <input type="date" class="w-full pl-12 pr-4 py-4 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400">
+                                </div>
+                                <div class="relative">
+                                    <i class="fas fa-clock absolute left-4 top-4 text-green-300"></i>
+                                    <input type="time" class="w-full pl-12 pr-4 py-4 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400">
+                                </div>
+                            </div>
+                            
+                            <div class="relative">
+                                <i class="fas fa-users absolute left-4 top-4 text-yellow-300"></i>
+                                <select class="w-full pl-12 pr-4 py-4 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400">
+                                    <option value="">Select Passengers</option>
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4+">4+ Passengers</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-2xl hover:from-purple-400 hover:to-pink-400 transition transform hover:scale-105">
+                                <i class="fas fa-rocket mr-2"></i>
+                                Book Your Ride
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-yellow-400 rounded-full opacity-20 floating-animation"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-pink-400 rounded-full opacity-10 floating-animation" style="animation-delay: -2s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-blue-400 rounded-full opacity-15 floating-animation" style="animation-delay: -4s;"></div>
+    </section>
+
+    <!-- Car Types Section -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-white mb-4">Choose Your Ride</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Select from our premium fleet designed for comfort, luxury, and reliability
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Economy Car -->
+                <div class="card-hover bg-gray-900 rounded-3xl p-8 border border-gray-800">
+                    <div class="text-center">
+                        <img src="https://placehold.co/300x200" alt="Compact economy sedan car in silver color with modern design and fuel-efficient features for city driving" class="w-full h-48 object-cover rounded-2xl mb-6" />
+                        <h3 class="text-2xl font-bold text-white mb-2">Economy</h3>
+                        <p class="text-gray-400 mb-4">Perfect for solo trips and budget-friendly rides</p>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-yellow-400 font-bold text-2xl">$12</span>
+                            <span class="text-gray-500">/trip</span>
+                        </div>
+                        <ul class="text-left text-gray-400 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Up to 4 passengers</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Air conditioning</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>GPS tracking</li>
+                        </ul>
+                        <button class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:from-blue-400 hover:to-purple-400 transition">
+                            Select Economy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Premium Car -->
+                <div class="card-hover bg-gray-900 rounded-3xl p-8 border-2 border-yellow-400 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm font-bold">POPULAR</span>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/300x200" alt="Luxury premium sedan in black with leather interior, advanced safety features and premium comfort amenities" class="w-full h-48 object-cover rounded-2xl mb-6" />
+                        <h3 class="text-2xl font-bold text-white mb-2">Premium</h3>
+                        <p class="text-gray-400 mb-4">Comfort and style for important journeys</p>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-yellow-400 font-bold text-2xl">$25</span>
+                            <span class="text-gray-500">/trip</span>
+                        </div>
+                        <ul class="text-left text-gray-400 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Up to 4 passengers</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Leather seats</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>WiFi & charging</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Professional driver</li>
+                        </ul>
+                        <button class="w-full py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-xl hover:from-yellow-300 hover:to-orange-400 transition">
+                            Select Premium
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Luxury Car -->
+                <div class="card-hover bg-gray-900 rounded-3xl p-8 border border-gray-800">
+                    <div class="text-center">
+                        <img src="https://placehold.co/300x200" alt="Ultra-luxury executive limousine in white with tinted windows, premium leather interior and high-end amenities for VIP transportation" class="w-full h-48 object-cover rounded-2xl mb-6" />
+                        <h3 class="text-2xl font-bold text-white mb-2">Luxury</h3>
+                        <p class="text-gray-400 mb-4">Ultimate luxury experience for special occasions</p>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-yellow-400 font-bold text-2xl">$50</span>
+                            <span class="text-gray-500">/trip</span>
+                        </div>
+                        <ul class="text-left text-gray-400 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Up to 6 passengers</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Premium interior</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Refreshments</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Chauffeur service</li>
+                        </ul>
+                        <button class="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-400 hover:to-pink-400 transition">
+                            Select Luxury
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 morphing-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-white mb-4">Our Services</h2>
+                <p class="text-xl text-white opacity-90 max-w-3xl mx-auto">
+                    Comprehensive transportation solutions for every need
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-effect rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-city text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">City Rides</h3>
+                    <p class="text-white opacity-80">Quick and convenient transportation within the city</p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-plane text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Airport Transfer</h3>
+                    <p class="text-white opacity-80">Reliable airport pickup and drop-off services</p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Scheduled Rides</h3>
+                    <p class="text-white opacity-80">Book rides in advance for important events</p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Hourly Rental</h3>
+                    <p class="text-white opacity-80">Flexible hourly rental options for your convenience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-white mb-4">Why Choose RideEase?</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Experience the difference with our premium service standards
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Safety First</h3>
+                            <p class="text-gray-400">All our drivers are thoroughly vetted and our vehicles undergo regular safety inspections.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-dollar-sign text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Transparent Pricing</h3>
+                            <p class="text-gray-400">No hidden fees, no surge pricing. What you see is what you pay.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">24/7 Available</h3>
+                            <p class="text-gray-400">Round-the-clock service to meet all your transportation needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Premium Experience</h3>
+                            <p class="text-gray-400">Luxury vehicles, professional drivers, and exceptional customer service.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="https://placehold.co/600x400" alt="Professional chauffeur in uniform standing next to a luxury black sedan with city skyline in background during golden hour" class="w-full rounded-3xl shadow-2xl" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black opacity-30 rounded-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-white mb-8">Ready to Ride?</h2>
+            <p class="text-xl text-white opacity-90 mb-12 max-w-2xl mx-auto">
+                Download our app or call us now to experience premium transportation services
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                <button class="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition flex items-center space-x-3">
+                    <i class="fab fa-apple text-2xl"></i>
+                    <div class="text-left">
+                        <div class="text-xs">Download on the</div>
+                        <div class="text-lg font-bold">App Store</div>
+                    </div>
+                </button>
+                
+                <button class="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition flex items-center space-x-3">
+                    <i class="fab fa-google-play text-2xl"></i>
+                    <div class="text-left">
+                        <div class="text-xs">Get it on</div>
+                        <div class="text-lg font-bold">Google Play</div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="flex justify-center space-x-8 text-white">
+                <div class="text-center">
+                    <i class="fas fa-phone text-3xl mb-2"></i>
+                    <p class="font-semibold">+1 (555) 123-4567</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-envelope text-3xl mb-2"></i>
+                    <p class="font-semibold">support@rideease.com</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+   <!-- Footer -->
+    <footer class="bg-black py-12">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+        <!-- Logo + About -->
+        <div>
+            <div class="flex items-center space-x-2 mb-4">
+            <div
+                class="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center"
+            >
+                <i class="fas fa-car text-white text-lg"></i>
+            </div>
+            <span class="text-2xl font-bold text-white">RideEase</span>
+            </div>
+            <p class="text-gray-400">
+            Premium transportation services that redefine your travel experience.
+            </p>
+        </div>
+
+        <!-- Services -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-400">
+            <li>
+                <a href="#" class="hover:text-white transition">City Rides</a>
+            </li>
+            <li>
+                <a href="#" class="hover:text-white transition">Airport Transfer</a>
+            </li>
+            <li>
+                <a href="#" class="hover:text-white transition">Scheduled Rides</a>
+            </li>
+            <li>
+                <a href="#" class="hover:text-white transition">Hourly Rental</a>
+            </li>
+            </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-400">
+            <li><a href="#" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition">Careers</a></li>
+            <li>
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+            </li>
+            </ul>
+        </div>
+
+        <!-- Follow Us -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+            <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-purple-500 transition"
+            >
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-purple-500 transition"
+            >
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-purple-500 transition"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-purple-500 transition"
+            >
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            </div>
+        </div>
+        </div>
+
+        <!-- Bottom Line -->
+        <div
+        class="mt-10 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm"
+        >
+        © 2025 RideEase. All rights reserved.
+        </div>
+    </div>
+    </footer>
